@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Meli 💙</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body class="light-mode">
+    <div id="particles-container"></div>
+
+    <header>
+        <h1 class="logo">Para Meli 💙</h1>
+        <div class="controls">
+            <div id="music-player" class="music-card">
+                <div class="player-top">
+                    <button id="playPause" class="play-btn"><i class="fas fa-play"></i></button>
+                    <div class="track-info">
+                        <span class="song-title">The first time 🩵 🎵</span>
+                        <input type="range" id="progress-bar" min="0" max="100" value="0">
+                        <div class="time-stamps">
+                            <span id="current-time">0:00</span>
+                            <span id="duration-time">0:00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volume-container">
+                    <i class="fas fa-volume-down"></i>
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+                    <i class="fas fa-volume-up"></i>
+                </div>
+            </div>
+            <div class="sys-btns">
+                <button id="theme-btn" class="icon-btn"><i class="fas fa-moon"></i></button>
+                <button id="heart-exp-btn" class="icon-btn"><i class="fas fa-atom"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="fade-in">
+            <h2 class="typewriter">Eres lo mejor de mi mundo...</h2>
+            <p>Lo que siento.</p>
+        </section>
+
+        <section id="carta-section" class="fade-in">
+            <div class="carta-container" id="carta-para-meli">
+                <div class="carta-header">
+                    <i class="fas fa-envelope-open-heart"></i>
+                    <h3>Para mi niña hermosa:</h3>
+                </div>
+                <div class="carta-body">
+                    <p>Desde que llegaste a mi vida, todo cambió sin que yo me diera cuenta. No fue de golpe, fue despacio… como cuando el amanecer empieza a pintar el cielo sin pedir permiso. Así entraste tú: suave, pero dejando todo más bonito.
+
+Quiero que sepas algo que a veces no digo con palabras: tú eres mi lugar seguro. Cuando el mundo pesa, cuando la cabeza no se calla, cuando siento que no encajo en nada… pensar en ti me regresa la calma. Eres esa paz que no se compra, que no se finge, que solo se siente.
+
+Me encanta la forma en la que existes. Tu sonrisa, tu manera de hablar, tus silencios, incluso tus días difíciles. Todo en ti tiene algo que me atrapa. No eres solo alguien que quiero, eres alguien que admiro, que cuido desde el alma, que pienso incluso cuando no estoy contigo.
+
+Si supieras cuántas veces me descubro sonriendo solo por recordarte…
+Cuántas veces imagino abrazarte fuerte cuando siento que el mundo se me mueve.
+Cuántas veces quisiera detener el tiempo solo para quedarme contigo un poquito más.
+
+No prometo ser perfecto, porque no lo soy. Pero sí prometo quererte con verdad. Quererte en tus días bonitos y también en los grises. Quererte cuando rías, cuando estés cansada, cuando dudes, cuando necesites silencio o cuando solo quieras que alguien esté ahí.
+
+Tú no eres una casualidad en mi vida. Eres una elección. Una de esas que el corazón hace sin preguntar nada más.
+
+Gracias por existir, por ser tú, por dejarme quererte.
+Gracias por ser mi niña hermosa.</p>
+                    <p>Siempre tuyo, <br><strong>Luis.M.</strong></p>
+                </div>
+            </div>
+            <button id="download-btn" class="main-btn">Descargar mi amor (PDF) <i class="fas fa-download"></i></button>
+        </section>
+
+        <section id="frases-section" class="fade-in">
+            <div class="frase-card"><p id="frase-display">Toca el botón...</p></div>
+            <button id="next-frase" class="main-btn">Nueva razón ✨</button>
+        </section>
+    </main>
+
+    <div id="heart-overlay" class="hidden">
+        <button id="close-heart" class="back-btn"><i class="fas fa-chevron-left"></i> Regresar</button>
+        
+        <div id="heart-controls">
+            <p class="panel-title">Personaliza tu corazón</p>
+            <button id="btn-rainbow" class="control-btn rainbow">Efecto Arcoíris 🌈</button>
+            
+            <div class="control-group">
+                <label>Color:</label>
+                <input type="color" id="color-picker" value="#ff5fa2">
+            </div>
+
+            <div class="control-group">
+                <label>Brillo:</label>
+                <input type="range" id="brightness-slider" min="20" max="100" value="70">
+            </div>
+
+            <div class="control-group">
+                <label>Opacidad:</label>
+                <input type="range" id="alpha-slider" min="0.1" max="1" step="0.1" value="0.9">
+            </div>
+        </div>
+
+        <canvas id="heartCanvas"></canvas>
+        
+        <div class="heart-texts">
+            <h1 class="glow-text">Mi Corazón Late por Ti</h1>
+            <h2 class="sub-glow">Amor Eterno e Indestructible</h2>
+        </div>
+    </div>
+
+    <audio id="bg-music" loop><source src="cancion.mp3" type="audio/mpeg"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
